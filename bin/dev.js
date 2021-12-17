@@ -12,10 +12,10 @@ const clinetCompiler = webpack(clientWebpackConfig)
 hmrServer.use(webpackDevMiddleware(clinetCompiler, {
     publicPath: clientWebpackConfig.output.publicPath,
     serverSideRender: true,
-    noInfo: true,
-    watchOptions: {
-        ignore: /dist/,
-    },
+    // compress: true,
+    // watchOptions: {
+    //     ignore: /dist/,
+    // },
     writeToDisk: true,
     stats: 'errors-only'
 }))
