@@ -1,0 +1,17 @@
+.notifications{
+    display: flex;
+    align-items: center;
+}
+.notifications__number{
+    background: var(--orange-color);
+    padding: 2px 5px;
+    border-radius: 50%;
+    color: var(--white-color);
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+}
+.notifications__openBtn{
+    background: transparent;
+    border: transparent;
+}
