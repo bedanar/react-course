@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './searchblock.css';
+import { UserBlock } from '../../UserBlock';
+import {useUserData} from '../../../hooks/useUserData' 
+import { userContext } from '../../Context/userContext';
+
 
 export function SearchBlock() {
+  const {userIcon, name} = useContext(userContext)
+
   return (
     <div className={styles.search}>
       <button className={styles.search__btn}>
@@ -10,6 +16,7 @@ export function SearchBlock() {
         </svg>
       </button>
       <input type="search" className={styles.search__input} placeholder='Поиск'/>
+      <UserBlock avatarSrc={userIcon} username={name}/>
     </div>
   );
 }

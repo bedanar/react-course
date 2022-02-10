@@ -12,7 +12,7 @@ interface IDropDownProps {
 const NOOP = () => {}
 
 export function Dropdown({button, children, isOpen, onClose=NOOP, onOpen=NOOP}: IDropDownProps) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(isOpen)
 
   useEffect(() => setIsDropdownOpen(isOpen), [isOpen])
   useEffect(() => isDropdownOpen ? onOpen() : onClose(), [isDropdownOpen])
@@ -25,7 +25,7 @@ export function Dropdown({button, children, isOpen, onClose=NOOP, onOpen=NOOP}: 
 
   return (
     <div className={styles.container}>
-      <div onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+      <div onClick={handleOpen}>
         {button}
       </div>
       {isDropdownOpen &&
