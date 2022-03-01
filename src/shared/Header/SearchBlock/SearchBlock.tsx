@@ -6,7 +6,7 @@ import { userContext } from '../../Context/userContext';
 
 
 export function SearchBlock() {
-  const {userIcon, name} = useContext(userContext)
+  const {data, loading } = useUserData()
 
   return (
     <div className={styles.search}>
@@ -16,7 +16,7 @@ export function SearchBlock() {
         </svg>
       </button>
       <input type="search" className={styles.search__input} placeholder='Поиск'/>
-      <UserBlock avatarSrc={userIcon} username={name}/>
+      <UserBlock avatarSrc={data.userIcon} username={data.name} loading={loading}/>
     </div>
   );
 }

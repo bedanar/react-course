@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { ProfilePhoto } from '../ProfilePhoto';
 import { UserBlock } from '../UserBlock';
-import styles from './header.css';
+// import styles from './header.css';
 import { Notifications } from './Notifications';
 import { SearchBlock } from './SearchBlock';
 import {tokenContext} from '../Context/context'
+import styles from '../../main.global.css'
+
 interface IHeaderProps {
   token: string
 }
@@ -19,7 +21,6 @@ export function Header() {
       </Consumer> */}
       <SearchBlock />
       <Notifications />
-      <UserBlock />
     </header>
   );  
 }

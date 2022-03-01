@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styles from './post.css';
 import ReactDOM from 'react-dom'
 import {CommentForm} from '../CommentForm'
+import CommentFormContainer from '../CommentForm/CommentFormContainer';
 
 interface IPostProps {
   onClose?: () => void
@@ -34,7 +35,7 @@ export function Post(props: IPostProps) {
         <p>sslnfdsvbskbvbs</p>
         <p>sldnsldnvsndn</p>
       </div>
-      <CommentForm />
+      <CommentFormContainer />
     </div>), node
   );
 }
